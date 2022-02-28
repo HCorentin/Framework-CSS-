@@ -1,0 +1,91 @@
+@mixin btn($bg-color: #e2e2e2) {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: $base-padding $base-padding*2;
+  border-radius: $base-border-radius;
+  background-color: $bg-color;
+}
+
+.btn {
+  @include btn;
+}
+
+@each $key, $val in $colors {
+  .btn-#{$key} {
+    @include btn($val);
+
+    &:hover {
+      background-color: lighten($val, 5);
+    }
+
+    &:active {
+      background-color: darken($val, 5);
+    }
+  }
+  .btn-outlined-#{$key} {
+    @include btn(#fff);
+    border: $base-border-thickness solid $val;
+
+    &:hover {
+      background-color: $val;
+    }
+
+    &:active {
+      background-color: darken($val, 5);
+    }
+  }
+  .btn-complement-#{$key} {
+    @include btn($val);
+    color: light-comp($val);
+
+    &:hover {
+      color: $val;
+      background-color: light-comp($val);
+    }
+
+    &:active {
+      background-color: darken($val, 5);
+    }
+  }
+}
+
+//large buttons
+
+.btn-lg {
+  padding: .5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: .3rem;
+  line-height: 1.5;
+  color: white;
+}
+
+//small buttons
+.btn-sm {
+  padding: .25rem .5rem;
+  font-size: .875rem;
+  border-radius: .2rem;
+  color: white;
+  line-height: 1.5;
+}
+
+//disabled state
+.disabled {
+  pointer-events: none;
+  opacity: .65;
+}
+
+//button close
+.btn-close {
+  box-sizing: content-box;
+  width: 1em;
+  height: 1em;
+  padding: .25em .25em;
+  color: #000;
+  background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+  border: 0;
+  border-radius: .25rem;
+  opacity: .5;
+  margin-right: 0;
+}

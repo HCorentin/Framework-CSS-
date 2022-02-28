@@ -1,0 +1,68 @@
+// Class
+.visible {
+  visibility: visible !important;
+}
+
+.hidden {
+  visibility: hidden !important;
+}
+
+@include xs {
+  .visible-xs {
+    visibility: visible !important;
+  }
+
+  .hidden-xs {
+    visibility: hidden !important;
+  }
+}
+
+@include sm {
+  .visible-sm {
+    visibility: visible !important;
+  }
+
+  .hidden-sm {
+    visibility: hidden !important;
+  }
+}
+
+@include md {
+  .visible-md {
+    visibility: visible !important;
+  }
+
+  .hidden-md {
+    visibility: hidden !important;
+  }
+}
+
+@include lg {
+  .visible-lg {
+    visibility: visible !important;
+  }
+
+  .hidden-lg {
+    visibility: hidden !important;
+  }
+}
+
+@include xl {
+  .visible-xl {
+    visibility: visible !important;
+  }
+
+  .hidden-xl {
+    visibility: hidden !important;
+  }
+}
+
+@media print {
+  .visible-print {
+    visibility: visible;
+  }
+
+  .hidden-print {
+    visibility: hidden;
+  }
+}
